@@ -1,7 +1,8 @@
 # create-junit-report [![Build Status](https://travis-ci.org/nwinkler/create-junit-report.svg?branch=master)](https://travis-ci.org/nwinkler/create-junit-report)
 
-> My super module
+Creates a JUnit XML file based on the provided input parameters.
 
+Can be used to create a JUnit XML file from command line, e.g. from a shell script's results.
 
 ## Install
 
@@ -15,29 +16,65 @@ $ npm install --save create-junit-report
 ```js
 const createJunitReport = require('create-junit-report');
 
-createJunitReport('unicorns');
-//=> 'unicorns & rainbows'
+createJunitReport('suite', 'class', 'test', false, 'Foo Bar Baz', { outputPath: 'foo' });
+//=> creates `foo/suite.xml` file
 ```
 
+Generated `foo/suite.xml` file:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="suite">
+    <testcase classname="class" name="test">
+      <failure message="Foo Bar Baz"/>
+    </testcase>
+  </testsuite>
+</testsuites>
+```
 
 ## API
 
-### createJunitReport(input, [options])
+### createJunitReport(suiteName, className, testName, passed, failureMessage, [options])
 
-#### input
+#### suiteName
 
 Type: `string`
 
-Lorem ipsum.
+Name of the test suite, also the name of the generated file (+ `.xml`).
+
+#### className
+
+Type: `string`
+
+Used for the result file's `classname` attribute of the testcase entry.
+
+#### testName
+
+Type: `string`
+
+Used for the result file's `name` attribute of the testcase entry.
+
+#### suiteName
+
+Type: `boolean`
+
+Used to indicate test success (_truthy_) or test failure (_falsy_).
+
+#### failureMessage
+
+Type: `string`
+
+Optional failure message in case of a test failure.
 
 #### options
 
-##### foo
+##### outputPath
 
-Type: `boolean`  
-Default: `false`
+Type: `string`  
+Default: `.`
 
-Lorem ipsum.
+Output directory of the generated file.
 
 
 ## CLI
@@ -50,18 +87,15 @@ $ npm install --global create-junit-report
 $ create-junit-report --help
 
   Usage
-    create-junit-report [input]
+	 $ create-junit-report [suite] [class] [test] [passed] [failureMessage]
 
   Options
-    --foo  Lorem ipsum. [Default: false]
+	 --outputPath  path [Default: .]
 
   Examples
-    $ create-junit-report
-    unicorns & rainbows
-    $ create-junit-report ponies
-    ponies & rainbows
+	 $ create-junit-report suite class test 1 --outputPath foo
+		 ==> creates `foo/suite.xml`
 ```
-
 
 ## License
 
