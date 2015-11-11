@@ -20,7 +20,7 @@ createJunitReport('suite', 'class', 'test', false, 'Foo Bar Baz', { outputPath: 
 //=> creates `foo/suite.xml` file
 ```
 
-Generated `foo/suite.xml` file:
+The generated `foo/suite.xml` file looks like this:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
