@@ -5,16 +5,14 @@ var createJunitReport = require('./');
 
 var cli = meow([
 	'Usage',
-	'  $ create-junit-report [input]',
+	'  $ create-junit-report [suite] [class] [test] [passed] [failureMessage]',
 	'',
 	'Options',
-	'  --foo  Lorem ipsum. [Default: false]',
+	'  --outputPath  path [Default: .]',
 	'',
 	'Examples',
-	'  $ create-junit-report',
-	'  unicorns & rainbows',
-	'  $ create-junit-report ponies',
-	'  ponies & rainbows'
+	'  $ create-junit-report suite class test 1 --outputPath foo',
+	'    ==> creates `foo/suite.xml`'
 ]);
 
-console.log(createJunitReport(cli.input[0] || 'unicorns'));
+createJunitReport(cli.input[0], cli.input[1], cli.input[2], cli.input[3], cli.input[4], cli.flags);

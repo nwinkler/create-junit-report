@@ -1,7 +1,7 @@
 {
   "name": "create-junit-report",
   "version": "0.0.0",
-  "description": "My super module",
+  "description": "Creates a JUnit XML file based on the provided input parameters",
   "license": "MIT",
   "repository": "nwinkler/create-junit-report",
   "author": {
@@ -27,7 +27,8 @@
   ],
   "dependencies": {
     "junit-report-builder": "^1.0.0",
-    "meow": "^3.4.2"
+    "meow": "^3.4.2",
+    "slug": "^0.9.1"
   },
   "devDependencies": {
     "ava": "^0.3.0",
