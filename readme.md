@@ -65,4 +65,4 @@ $ create-junit-report --help
 
 ## License
 
-MIT © [Nils Winkler](https://services.sungard.com/git/users/nils.winkler)
+MIT © [Nils Winkler](https://github.com/nwinkler)

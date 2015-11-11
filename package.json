@@ -6,8 +6,8 @@
   "repository": "nwinkler/create-junit-report",
   "author": {
     "name": "Nils Winkler",
-    "email": "nils.winkler@sungard.com",
-    "url": "https://services.sungard.com/git/users/nils.winkler"
+    "email": "nils@nilswinkler.com",
+    "url": "https://github.com/nwinkler/create-junit-report"
   },
   "bin": "cli.js",
   "engines": {
