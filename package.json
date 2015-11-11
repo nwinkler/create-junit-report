@@ -7,7 +7,7 @@
   "author": {
     "name": "Nils Winkler",
     "email": "nils.winkler@sungard.com",
-    "url": "services.sungard.com/git/users/nils.winkler"
+    "url": "https://services.sungard.com/git/users/nils.winkler"
   },
   "bin": "cli.js",
   "engines": {
@@ -26,6 +26,7 @@
     ""
   ],
   "dependencies": {
+    "junit-report-builder": "^1.0.0",
     "meow": "^3.4.2"
   },
   "devDependencies": {
