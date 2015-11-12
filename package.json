@@ -1,6 +1,6 @@
 {
   "name": "create-junit-report",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Creates a JUnit XML file based on the provided input parameters",
   "license": "MIT",
   "repository": "nwinkler/create-junit-report",
