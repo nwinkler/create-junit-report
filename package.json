@@ -32,6 +32,7 @@
   },
   "devDependencies": {
     "ava": "^0.3.0",
+    "rimraf": "^2.4.3",
     "xo": "^0.10.0"
   },
   "xo": {

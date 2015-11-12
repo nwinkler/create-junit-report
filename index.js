@@ -22,5 +22,8 @@ module.exports = function (suiteName, className, testName, passed, failureMessag
 		testCase.failure(failureMessage);
 	}
 
-	builder.writeTo(path.join(opts.outputPath || '.', slug(suiteName) + '.xml'));
+	var outputFile = path.join(opts.outputPath || '.', slug(suiteName) + '.xml');
+	builder.writeTo(outputFile);
+
+	return outputFile;
 };

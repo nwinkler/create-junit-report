@@ -5,6 +5,7 @@
     "curly": true,
     "devel": true,
     "eqeqeq": true,
+		"esnext": true,
     "forin": true,
     "immed": true,
     "indent": 4,
