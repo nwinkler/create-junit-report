@@ -13,6 +13,14 @@ test('outputFile', t => {
 	t.end();
 });
 
+test('missing suite parameter', t => {
+	var suiteName = '',
+			className = 'className',
+			testName = 'testName';
+	t.is(fn(suiteName, className, testName, true, '', { outputPath: testPath}), path.join(testPath, 'suite.xml'));
+	t.end();
+});
+
 test.after(t => {
 	// Delete the test path, provide a noop callback
 	rimraf(testPath, Function.prototype);
