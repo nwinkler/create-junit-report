@@ -2,7 +2,7 @@
 
 Creates a JUnit XML file based on the provided input parameters.
 
-Can be used to create a JUnit XML file from command line, e.g. from a shell script's results.
+Can be used to create a JUnit XML file from command line, e.g. from a shell script's results. This is great for continuous integration, in case you're running some test steps that don't provide their own JUnit-compatible reporter.
 
 ## Install
 
@@ -41,21 +41,21 @@ The generated `foo/suite.xml` file looks like this:
 
 Type: `string`
 
-Name of the test suite, also the name of the generated file (+ `.xml`).
+Name of the test suite, also the name of the generated file (+ `.xml`). Default value: `suite`
 
 #### className
 
 Type: `string`
 
-Used for the result file's `classname` attribute of the testcase entry.
+Used for the result file's `classname` attribute of the testcase entry. Mandatory parameter.
 
 #### testName
 
 Type: `string`
 
-Used for the result file's `name` attribute of the testcase entry.
+Used for the result file's `name` attribute of the testcase entry. Mandatory parameter.
 
-#### suiteName
+#### passed
 
 Type: `boolean`
 

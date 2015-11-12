@@ -21,6 +21,22 @@ test('missing suite parameter', t => {
 	t.end();
 });
 
+test('missing class parameter', t => {
+	var suiteName = '',
+			className = '',
+			testName = 'testName';
+	t.throws(() => { fn(suiteName, className, testName, true, '', { outputPath: testPath})}, 'Missing parameter: className');
+	t.end();
+});
+
+test('missing test parameter', t => {
+	var suiteName = '',
+			className = 'className',
+			testName = '';
+	t.throws(() => { fn(suiteName, className, testName, true, '', { outputPath: testPath})}, 'Missing parameter: testName');
+	t.end();
+});
+
 test.after(t => {
 	// Delete the test path, provide a noop callback
 	rimraf(testPath, Function.prototype);

@@ -6,6 +6,15 @@ var path = require('path');
 
 module.exports = function (suiteName, className, testName, passed, failureMessage, opts) {
 	suiteName = suiteName || 'suite';
+
+	if (!className) {
+		throw new Error('Missing parameter: className');
+	}
+
+	if (!testName) {
+		throw new Error('Missing parameter: testName');
+	}
+
 	opts = opts || {};
 
 	var builder = builderFactory.newBuilder();
