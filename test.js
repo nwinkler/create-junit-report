@@ -17,7 +17,7 @@ test('missing suite parameter', t => {
 	var suiteName = '',
 			className = 'className',
 			testName = 'testName';
-	t.is(fn(suiteName, className, testName, true, '', { outputPath: testPath}), path.join(testPath, 'suite.xml'));
+	t.throws(() => { fn(suiteName, className, testName, true, '', { outputPath: testPath})}, 'Missing parameter: className');
 	t.end();
 });
 

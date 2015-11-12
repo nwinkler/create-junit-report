@@ -41,7 +41,7 @@ The generated `foo/suite.xml` file looks like this:
 
 Type: `string`
 
-Name of the test suite, also the name of the generated file (+ `.xml`). Default value: `suite`
+Name of the test suite, also the name of the generated file (+ `.xml`). Mandatory parameter.
 
 #### className
 

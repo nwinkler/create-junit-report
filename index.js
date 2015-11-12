@@ -5,7 +5,9 @@ var slug = require('slug');
 var path = require('path');
 
 module.exports = function (suiteName, className, testName, passed, failureMessage, opts) {
-	suiteName = suiteName || 'suite';
+	if (!suiteName) {
+		throw new Error('Missing parameter: suiteName');
+	}
 
 	if (!className) {
 		throw new Error('Missing parameter: className');
