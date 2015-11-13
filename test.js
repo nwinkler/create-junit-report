@@ -13,6 +13,22 @@ test('outputFile', t => {
 	t.end();
 });
 
+test('outputFile slug dash', t => {
+	var suiteName = 'suite-name',
+			className = 'className',
+			testName = 'testName';
+	t.is(fn(suiteName, className, testName, true, '', { outputPath: testPath}), path.join(testPath, 'suite-name.xml'));
+	t.end();
+});
+
+test('outputFile slug space', t => {
+	var suiteName = 'suite name',
+			className = 'className',
+			testName = 'testName';
+	t.is(fn(suiteName, className, testName, true, '', { outputPath: testPath}), path.join(testPath, 'suite-name.xml'));
+	t.end();
+});
+
 test('missing suite parameter', t => {
 	var suiteName = '',
 			className = 'className',
